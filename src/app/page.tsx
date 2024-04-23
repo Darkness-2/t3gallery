@@ -1,24 +1,19 @@
-const mockUrls = [
-  "https://utfs.io/f/b80d2550-8192-4b8f-a7f1-d619e5ab2348-n3h49x.jpg",
-  "https://utfs.io/f/b8ba77dc-d103-45e7-841e-801fe4072072-38i8a3.jpg",
-  "https://utfs.io/f/1b562bc6-8285-4e8b-a92d-fd8674582a8d-jn8axw.jpg",
-  "https://utfs.io/f/6bccc5a0-71ad-4372-82f2-d0792dedfbc8-wlvg1u.jpg",
-];
-
-const mockImages = mockUrls.map((url, index) => ({
-  id: index + 1,
-  url,
-}));
+import { desc } from "drizzle-orm";
+import { db } from "~/server/db";
+import { images } from "~/server/db/schema";
 
 export const dynamic = "force-dynamic";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const allImages = await db.select().from(images).orderBy(desc(images.id));
+
   return (
     <main className="">
       <div className="flex flex-wrap gap-4">
-        {[...mockImages, ...mockImages, ...mockImages].map((image, index) => (
-          <div key={index} className="w-48">
+        {[...allImages, ...allImages, ...allImages].map((image, index) => (
+          <div key={image.id + "-" + index} className="flex w-48 flex-col">
             <img src={image.url} />
+            <div>{image.name}</div>
           </div>
         ))}
       </div>
