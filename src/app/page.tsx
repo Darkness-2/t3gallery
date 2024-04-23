@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 const mockUrls = [
   "https://utfs.io/f/b80d2550-8192-4b8f-a7f1-d619e5ab2348-n3h49x.jpg",
   "https://utfs.io/f/b8ba77dc-d103-45e7-841e-801fe4072072-38i8a3.jpg",
@@ -16,8 +14,8 @@ export default function HomePage() {
   return (
     <main className="">
       <div className="flex flex-wrap gap-4">
-        {[...mockImages, ...mockImages, ...mockImages].map((image) => (
-          <div key={image.id} className="w-48">
+        {[...mockImages, ...mockImages, ...mockImages].map((image, index) => (
+          <div key={index} className="w-48">
             <img src={image.url} />
           </div>
         ))}
