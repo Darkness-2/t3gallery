@@ -9,7 +9,7 @@
     "db:generate": "drizzle-kit generate:pg",
     "db:migrate": "dotenv tsx ./src/server/db/migrate",
     "db:studio": "drizzle-kit studio --verbose",
-    "dev": "next dev --turbo",
+    "dev": "next dev",
     "lint": "next lint",
     "start": "next start"
   },
