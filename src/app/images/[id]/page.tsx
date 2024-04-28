@@ -9,5 +9,9 @@ export default function ImagePage({ params: { id } }: ImagePageProps) {
 
   if (Number.isNaN(imageId)) throw new Error("Invalid photo id");
 
-  return <FullImagePage id={imageId} />;
+  return (
+    <div className="h-full">
+      <FullImagePage id={imageId} />
+    </div>
+  );
 }
