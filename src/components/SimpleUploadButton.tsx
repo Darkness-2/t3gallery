@@ -51,7 +51,7 @@ export default function SimpleUploadButton() {
   const router = useRouter();
   const { inputProps } = useUploadThingInputProps("imageUploader", {
     onUploadBegin: () => {
-      toast("Uploading...", {
+      toast.loading("Uploading...", {
         duration: 1000000,
         id: "upload-begin",
       });
