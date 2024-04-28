@@ -15,5 +15,5 @@
 - [x] Routing/image page
 - [x] ShadUI-ify
 - [ ] Delete button
-- [ ] Analytics
+- [x] Analytics
 - [ ] Rate limiting
