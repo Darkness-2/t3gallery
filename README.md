@@ -13,6 +13,7 @@
 - [x] Use Next/Image component
 - [ ] Error management
 - [x] Routing/image page
+- [ ] ShadUI-ify
 - [ ] Delete button
 - [ ] Analytics
 - [ ] Rate limiting
